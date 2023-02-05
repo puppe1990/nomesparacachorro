@@ -18,6 +18,12 @@ const DogNameButton = () => {
     <div className="DogNameButton-container">
       <button className="btn btn-primary" onClick={handleClick}>Mostre nome do cachorro</button>
       {showName && <p style={{ textAlign: 'center', color: '#FF0000', fontSize: "100px" }}>{dogName}</p>}
+      <p>Como usar:</p>
+      <ul>
+        <li>Clique no botão "Mostre nome do cachorro" para gerar um nome aleatório de cachorro da nossa lista.</li>
+        <li>Se você gostar do nome gerado, clique no link "Clique para comprar Ebook com mais de 1000 nomes para cachorro!" para comprar um ebook com mais de 1000 nomes de cachorro.</li>
+        <li>Se você tiver alguma dúvida ou feedback, clique no link "Contato" para entrar em contato conosco.</li>
+      </ul>
       <div>
         <a href="http://mpago.la/2ohC19" target="_blank" rel="noopener noreferrer">
         Clique para comprar Ebook com mais de 1000 nomes para cachorro!
