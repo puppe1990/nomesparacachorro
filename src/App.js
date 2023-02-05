@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './DogNameButton.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const DogNameList = ['Fido', 'Rover', 'Buddy', 'Max', 'Bella', "Yuri","Bruce","Bolinha","Oliver","Tequila","Boo","Poof","Vitória","Teco","Tico","Aruk","Lanna","Lex Luthor","Dulce","Benedita","Frida","Luna","Snoopy","Felpudo","Minnie","Pinga","Odin","Tulipa","Buddy","Nina","Lilo","Maya","Fumaça","Bolota","Jorginho","Gerinho","Bud","Frederica","Chico","Chanel","Fitz","Nina","Shake","Milu","Bruno","Black","Baboo","Milu","Ralf","Ruby","Tobby","Caramelo","Fiona","Mila","Cindy","Rosa","Pipinho","Tom","July","Arthur","Amendoin","Amora","Mel","Valentina","Aquiles","Sally","Freddie","Snoop","Pepita","Nina" ,"Tapioca","Suri","Lola","Leo","Yuri","Rafael","Pepe","Maggie","Rafael","One","Gucci","Bibi","Fred","Nina","Spike","Luli","Fred","Sansa","Luli","Kenai","Arya","Jolie","Xavier","Luna","Valentino","Bolt","Teca","Samanta","Cindy","Woody","Olaf","Stefano","Nina","Nina","Aurora","Paçoca","Berenice","Danna","Lizzie","Lineu","Cherie","Naomi","Ursolina","Bento","Napoleão","Charlotte","Abigail","Paçoca","Ganesh","Luna","Maia","Billy Idol","Theo","Tobias","Maya","Valentim","Joe","Chivas","Cristal","Apolo","Joe","José","Tauriel","Luna","Zandor","Dora","Niméria","Carambola","Bella","Fidel","Paçoca","Maíba","Pipa","Tita","Oreo","Gandhi","Hugo","Naná","Fred","Pepper","Izzie","Shelby","Sandha","Nina","Farofa","Costelinha","Sophie","Langmuir","Princesa","Billy","Maya","Sissa","Cida","Nino","Lora","Sandy","Miucha","Luna","Nina","Lara","Flora","Koda","Chico","Luck","Tobias","Frida","Toby","Dóris","Jolie","Thiffany","James Bond","Minie","Lika","Doki","Xoko","Tonico","Luke","Zoe","Malí","Alissa","Berenice","Lola","Gordon","Martin","Hulk","Lizzy","Toy","Yasmin","Sombra","Paçoca","Orion","Cheetara","Hommer","Suzi","Juca","Ziva","Sukata","Stallone","Filo","Anaquim","Luna","Mila","Melody","Luke","Sulley","Joaquim","Timão","Biscoito","Olívia","Lola","Elvis","Maio","Angel","Frida","Amora","Pipoca","Petisco","Beni","Kyra","Bartolomeu","Catarina","Beethoven","Lobão","Thor Valente","Chopp","Ted","Panqueca","Olívia","Kalb","Sassa","Antônia","Kika","Dux","Mel","Tarsila","Zidane","Holly","Emma","Nucha","Ricota","Pepita","Vicky","Tadinho","Olívia","Napoleão","Lilly","Bob","Boris","Zeus","Bartho","Nina","Adam","Kenai","Luky","Béria","Neguinha","Cindy","Thor","Black","Yuki","Dimmy","Mustafá","Tutu","Simba","Sheik","Caio","Duda","Chocolate","Luna","Nick","Luke","Kira","Tina","Luc","Simon","Leslie","Billie","Nina","Bolt","Jake","Theo","Zecão","Doug","Meg","Madruguinha","Melody","Filó","Pudim","Lucio","Phoebe","Balu","Clara","Suri","Bambina","Domitila","Thor","Neguinha","Natasha","Zeus","Ricota","Simba","Lia","Zelda","Filomena","Jack","Pingo","Cacau","Vicky","Louis José","Dante","Spok","Thor","Belinha","Wendy","Lucy","Dexter","Valentim","Brune","Maya","Boris","Zoe","Bugatti","Veyron","Wolf","Elis","Goldie","Sheik","Lucky","Brenda","Lory","Sid","Nicolay","Charlotte","Thor","Jack","Sleep","Soneca","Pitchula","Zoide","Dexter","Zeca","Eduardo","Chimarrão","Nina","Vincenzo","Thor","Messi","Matilda","Lebron","Kevin","Doggy","Chester","Bento","Psique","Ânima","Greg","Vito","Jack","Johnny","Anita","Kiara","Chopp","Pipa","Nani","Matilda","Bebel","Cindy","Cacau","Alegria","Billy","Surf","Nanu","Jun","Rocco","Thor","Nina","Chico","Tekila","Bowie","Simba","Jimi","Lolly","Lilla","Zelda","Kimmy","Emily","Ariel","Mafalda","Laila","Aisha","Buda","Jolie","Pipoca","Toddy","Bella","Lola","Mel","Ayla","Frederico","Ozzy","Luigi","Summer","Johny","Floc","Paçoca","Armin van Buuren","Lili","Lola","Léo","Fly","Maria Antonieta","Laila","Louis","Gucci","Lana","Joca","Felícia","Bruce","Pingo","Hunter","Costelinha","Teca","Yuki","Malu","Tiffanny","Bolt","Bandida","Sophie","Julie","Apollo","Hanna","Crystal","Táta","Popy","Lucy","Bernardo","Tequila","Woody","Dorah","Pipa","Simba","Lori","Kyra","Frank","Giulia","Nina","Cuki","Chopp","Balela","Eugênio","Mel","Pipoca","Banguela","Aisha","Pérola","Choby","Chocoby","Cacau","Athena","Lola","Tico","Julha","Milú","Boo","Duque","Valentina","Sarah","Elizabeth","Cookie","Snow","Zara","She-Ra","Wiz","Chico","Tyson","Luna","Didipi","Nina","Baruk","Mocinha","Theobaldo","Max","Bud","Layla","Duquesa","Zeus","Teca","Buster","Maga","Otto","Brisa","Francesca","Nala","Mike","Shanty","Theodor","Emi","Diana","Cacau","Liz","Miny","Juli","Gabagoo","Vanilla","Jorge","Ziggy","Skittles","Barão","Sheik","Tigo","Zizi","Tulipa","Sonny","Nikka","Milo","Leopoldo","Lady","Bidu","Ben","Petey","Eduarda","Mônica","Tico","Snoopy","Thor","Mel","Laurita","Léia","Jobim","Tob","Torquato","Gilberto","Iracema","Milka","Zeus","Luna","Torrada","Ofélia","Bartholomeu","Vincent","Agata","Valentin","Jimmy","Xico","Dorothy","Amelie","Jack Daniel’s","Alfredo","Cacau","Susi","Frida","Scott","Vince","Thor","Nasha","Lua","Scooby","Nala","Luigi","Dudu","Flash","Black","Billy","Leleco","Tico","Clinton","Barack","Mel","Xamã","Gohan","Neusa","Néia","Lupi","Toy","Billy","Luna Pamplona","Artie","Hanna","Pipoca","Radja","Spartacus","Nica","Mel","Floquinho","Surya","Marie","Jimmy","Janis","Nina","Morena","Panqueca","Nina","Arnaldo","Saci","Lina","Blase","Arthur","Fumaça","Pipoca","Zeca","Max","Jessie","Mel","Theo","Noir","Chewie","Lindinha","Louisie","Bolt","Becky","Chuckles","Zeca","Bono","Charlie","Rubi","Bóris","Clio","Zoe","Toad","Shiva","Ninna","Nina","Berenice","Mike","Mel","Lua","Lola","Mário","Lizzie","Odin","Zequinha","Pink","Kim","Coco","Kate","Jessy","Flip","Julie","Jake","Cristal","Twiggy","Tulipa","Toddy","Romeu","Punchy","Otto","Amelie","Astor","Tom Maior","Toby","Mell","Frajolla","Mione","Vida","Mel","Mel","Lucky","Bella","Bella","Charlie","Nemo","Bono","Cléo","Billy","Yoda","Foca","Dana","Frida","Cid","Filomena","Thor","Mitzi","Mimica","Criola","Ximba","Nega","Milou","Will","Brenda","Fofão","Heidi","Naomi","Cindy","Cacau","Logan","Charlinhos","Waffle","Pingo","Poly","Dog","Tommy","Laurinha","Beto","Berenice","Mell","Cookie","Kuka","Nina","Xuxa","Isabel","Lost","Chuco","Cacau","Rebeca","Maya","Alfredo","Puppy","Clara","Tim","Ike","Marley","Wendy","Luigi","Robi","Dinho","Nádia","Mirah","Barney","Bel","Homer","Filó","Meggie","Lisa","Sofia","Holly","Ciborg","Lobinho","Barth","Meg","Nero","Nick","Elvira","Urso","Manu","Filó","Manee","Charlie","Olivia","Lara Lee","Natália","Spyke","Sherry","Cissa","Bonnie","Augusta","Dizi","Saffy","Hooper","Billy","Isa","Átila","Dandara","JR","Olívia","Lelo","Bebel","Bisteca","Ovelha","Brida","Algodãozinho","Petruchio","Luz","Polly","Benne","Minnie","Sultão","Kalane","Caju","Pitu","Tekila","Taha","Pipoca","Scooby","Wedja","Neguinha","Dexter","Billie","Franchesca","Charlotte","Abba","Frodo","Zach","Bohr","Guri","Polônia","Enrico","Kisame","Frida","Bhaira","Selena","Douglas","Hanna","Thomas","Dominick","Boo","Kiko","Veruschka","Pippo","Mia","Simba","Jolie","Peach","Chanel","Cacau","Holy","Leah","Harley","Negrita","Luna","Hookie","Pepe","Speto","Otto","Fiona","Billy","Luna","Milla","Frida Kalo","Filó Sophia","Dom","Toby","Pitty","Lola","Iron","Pitica","Sophie","Bob","Dorothy","Rinck","Bart","Aslan","Batata","JD","Leopoldo","Pompeo","Zack","Lola","Gordo","Tai","Rita","Pub","Tifany","Cacau","Pepe","Luke","Luan","Anakin","Pitty","Lilly","Trinitty","Tiger","Radesh Prince","Frederico","Charlotte","Tica","Bella","Brian May","Tiffany","George","Aurora","Maya","Kash","Kika","Bolinha","Lara","Jimmy","Chumbinho","Gisele","Ozzy","Mila","Johny","Tulipa","Dora","Chip","Zig","Bob","Oliver","Belgica","Yoshi","Joy","Fred","Nina","Ernesto","Caco","Paris","Bolt","Pipoca","Kevin","Muck Leopoldo","Chanti","Kevin","Happy","Funny","Valentina","Colie","Kenny","Charlie","Teddy","Jack","Maxxi Mello","Wak","Yanki","Pucca","Petit","Pietra","Pacheco","Lory","Maya","Mike","Leko","Flok","Bella","Tião","Kini","Nina","Thor","Balu","Yago","Rebecca","Dinah","Pacco","Rabicó","Waldemorth","Baruk","Linus","Chope","Pingo","Rosélia","Gucci","Maveco","Lana","Pirulita","Indy","Lisa","Pitty","Wally Manhattan King","Elvis","Dogui","Bernardo","Laika","Gaya","Benjamin","Joey","Quinzinho","Woody","Angel","Alvin","Maya","Luna","Bob","Yoshi","Lara","Lacan","Meg","Jack","Ocean","Easy Lee","Baby","Léo","Buster","Yumi","Lia","Totó","Peri Menezes","Suzy","Meg","Bill","Moua","Blue Sky","Trigo","Pirilampéia","Justin","Babalu","Maggie","Mila","Figo","Samuel","Lua","Hanna","Hannah","Yuri","Tião","Johnny","Boris","Fiona","Ted","Junior","Mermão","Batatinha","Mike","Fiona","Gaspar","Joca","Bebel","Lancy","Tothy"];
+
+const DogNameButton = () => {
+  const [showName, setShowName] = React.useState(false);
+  const [dogName, setDogName] = React.useState('');
+
+  const handleClick = () => {
+    const randomIndex = Math.floor(Math.random() * DogNameList.length);
+    setDogName(DogNameList[randomIndex]);
+    setShowName(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className="DogNameButton-container">
+      <button className="btn btn-primary" onClick={handleClick}>Mostre nome do cachorro</button>
+      {showName && <p style={{ textAlign: 'center', color: '#FF0000', fontSize: "100px" }}>{dogName}</p>}
+      <div>
+        <a href="http://mpago.la/2ohC19" target="_blank" rel="noopener noreferrer">
+        Clique para comprar Ebook com mais de 1000 nomes para cachorro!
         </a>
-      </header>
+      </div>
+      <div>
+        <a href="mailto:matheus.puppe@gmail.com">Contato</a>
+      </div>
     </div>
-  );
-}
+  )
+};
 
-export default App;
+export default DogNameButton;
